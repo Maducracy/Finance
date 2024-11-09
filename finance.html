@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal finance</title></head
+  ><link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <h5 style="color: white; font-size: 18px">
+              VANNILA<span style="color: red">FINANCE</span>
+            </h5>
+            <br />
+            <!-- <img src="image.png"> -->
+            <li>
+              <a href="my dashboard.html" id="link">
+                <i class="fa-solid fa-chart-line"></i>Home</a
+              >
+            </li>
+            <li>
+              <a href="transaction.html" id="link">
+                <i class="fa-solid fa-money-bill"></i>Transactions</a
+              >
+            </li>
+            <li>
+              <a href="budget.html" id="link"
+                ><i class="fa-solid fa-wallet"></i> Budgets</a
+              >
+            </li>
+            <li>
+              <a href="pots.html" id="link"> <i class="fa-solid fa-box"></i>Pots</a>
+            </li>
+            <li>
+              <a href="loan.html" id="link"> <i class="fa-solid fa-landmark"></i>Loan</a>
+            </li>
+            <li>
+              <a href="recurring.html" id="link">
+                <i class="fa-solid fa-phone"></i>Recurring Bills</a
+              >
+            </li>
+            <li>
+              <a href="signin.html" id="link">
+                <i class="fa-solid fa-door-open"></i>Sign in</a
+              >
+            </li>
+            <li>
+              <a href="logout.html" id="link">
+                <i class="fa-solid fa-right-from-bracket"></i>Log out</a
+              >
+            </li>
+            <li>
+              <a href="settings.html" id="link"> <i class="fa-solid fa-gear"></i>Settings</a>
+            </li>
+            <select id="linkselect"
+            onclick="redirecttolink()">
+              <option  value="https://profile.html">My profile</option>
+              <option value="addacount">Add account</option>
+              <option value="askquestion">Ask a question</option>
+              <option value="policy"> policy</option>
+            </select>
+          </ul>
+        </nav>
+        <div class="minimize-menu">Minimize Menu</div>
+      </aside>
+      <main class="main-content">
+        <section class="overview">
+          <h2>Welcome Chidubem</h2>
+     
+          <p style="margin-bottom: 20px;" class="heading">Access and manage your account and transactions effiently</p>
+          <div class="balance-info">
+            <div class="info-box-current-balance">
+              <p>Current Balance</p>
+              <h1><span>&#8358</span> 104,836.00</h1>
+            </div>
+            <div class="info-box income">
+              <p>Income</p>
+              <h3 class="inputvalue"><span>&#8358</span> 300,814.25</h3>
+            </div>
+            <div class="info-box expenses">
+              <p>Expenses</p>
+              <h3 class="num"><span>&#8358</span> 35,700.50</h3>
+            </div>
+          </div>
+          <div class="content">
+            <div class="pots">
+              <h3>Pots</h3>
+              <div class="pot-saved">
+                <p>Total Saved</p>
+                <h4><span>&#8358</span>1,000,000</h4>
+                <ul>
+                  <li>Savings: <span>&#8358</span> 200, 000</li>
+                  <li>Gift: $40</li>
+                  <li>Concert Ticket: <span>&#8358</span>100,500</li>
+                  <li>New Laptop: <span>&#8358</span>90,000</li>
+                </ul>
+              </div>
+            </div>
+            <div class="budgets">
+              <h3>Budgets</h3>
+              <div class="budget-circle">
+                <div class="budget-amount"><span>&#8358</span>500,000</div>
+                <p>(67.5% left)</p>
+              </div>
+              <ul>
+                <li>Entertainment: <span>&#8358</span>100,000</li>
+                <li>Groceries: <span>&#8358</span>80,000</li>
+                <li>Personal Care: <span>&#8358</span>75,000</li>
+              </ul>
+            </div>
+            <div class="transactions">
+              <h3>Transactions</h3>
+              <ul>
+                <li>Emma Richardson: +<span>&#8358</span>90,000</li>
+                <li>Savvy Bites Bistro: -<span>&#8358</span>102,000</li>
+                <li>Daniel Carter: -<span>&#8358</span>44,000</li>
+                <li>Sun Park: +<span>&#8358</span>120,000</li>
+                <li>Urban Services Hub: -<span>&#8358</span>80,000</li>
+              </ul>
+            </div>
+            <div class="recurring-bills">
+              <h3>Recurring Bills</h3>
+              <ul>
+                <li>Paid Bills: <span>&#8358</span>180,000</li>
+                <li>Total Upcoming: <span>&#8358</span>198,000</li>
+                <li>Due Soon: <span>&#8358</span>110,000</li>
+              </ul>
+            </div>
+          </div>
+          .
+          <!-- <section class="progress-container">
+            <svg class="progress-ring" width="120" height="120">
+              <circle
+                class="progress-ring__circle"
+                stroke="blue"
+                stroke-width="4"
+                fill="transparent"
+                r="50"
+                cx="60"
+                cy="60"
+              />
+            </svg>
+            <div class="progress-label">0%</div>
+          </section> -->
+          <!-- <section class="personal-info">
+            <h1>Personal Infomation</h1>
+            <form action="">
+              <div class="field-name">
+                <div class="firstname">
+                  First Name<br />
+                  <input type="text" />
+                </div>
+                <div class="lastname">
+                  Last Name<br />
+                  <input type="text" />
+                </div>
+              </div>
+              <select class="select-ctn" name="" id="">
+                <option value=""></option>
+              </select>
+            </form> -->
+          </section>
+        </section>
+      </main>
+    </div>
+    <canvas id="complexBarChart" width="400" height="200"></canvas>
+
+
+  </body>
+
+  <script src="scripts.js"></script>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* Button styling */
+        .transaction-button, .history-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color:red;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+
+        .transaction-button:hover, .history-button:hover {
+            background-color: darkred;
+        }
+
+        /* Transaction history section styling */
+        .transaction-history {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: none; /* Initially hidden */
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color:red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Buttons for Transactions and History -->
+    <a href="javascript:void(0)" class="transaction-button" onclick="showTransactionSection()">Make a Transaction</a>
+    <a href="javascript:void(0)" class="history-button" onclick="toggleTransactionHistory()">Show Transaction History</a>
+
+    <!-- Transaction Section (Initially hidden) -->
+    <div id="transactionSection" class="transaction-section" style="display: none;">
+        <h2>Transaction Details</h2>
+        <form>
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" name="amount" placeholder="Enter amount">
+            
+            <label for="recipient">Recipient:</label>
+            <input type="text" id="recipient" name="recipient" placeholder="Enter recipient address">
+
+            <!-- <button type="submit">Submit Transaction</button> -->
+        </form>
+    </div>
+
+    <!-- Transaction History Section (Initially hidden) -->
+    <div id="transactionHistory" class="transaction-history">
+        <h2>Transaction History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Recipient</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-10-20</td>
+                    <td><span>&#8358</span>700,000</td>
+                    <td>0xA12B34C56D</td>
+                    <td>Completed</td>
+                </tr>
+                <tr>
+                    <td>2024-10-21</td>
+                    <td><span>&#8358</span>400,000</td>
+                    <td>0xB78E90F12G</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>2024-10-22</td>
+                    <td><span>&#8358</span>1000,000</td>
+                    <td>0xC34D78E90F</td>
+                    <td>Failed</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- Add more transactions as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Function to show the transaction section
+        function showTransactionSection() {
+            document.getElementById('transactionSection').style.display = 'block';
+        }
+
+        // Function to toggle the transaction history section
+        function toggleTransactionHistory() {
+            const historySection = document.getElementById('transactionHistory');
+            if (historySection.style.display === 'none' || historySection.style.display === '') {
+                 historySection.style.display = 'block';
+            } else {
+                historySection.style.display = 'none';
+           }
+        }
+    </script>
+
+</body>
+</html>

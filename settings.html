@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Settings</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <style>
+      /* General Button styling */
+      .settings-button {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: red;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        margin-top: 20px;
+      }
+
+      .settings-button:hover {
+        background-color: darkred;
+      }
+
+      /* Settings Section styling */
+      .settings-section {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        display: none; /* Initially hidden */
+      }
+
+      /* Form input styling */
+      .settings-section label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .settings-section input,
+      .settings-section select {
+        padding: 8px;
+        width: 100%;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      /* Button inside settings section */
+      .settings-section button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .settings-section button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Button to toggle Settings section -->
+    <a
+      href="javascript:void(0)"
+      class="settings-button"
+      onclick="toggleSettingsSection()"
+      >Settings</a
+    >
+
+    <!-- Settings Section (Initially hidden) -->
+    <div id="settingsSection" class="settings-section">
+      <h2>Settings <i style="color: black" class="fa-solid fa-gear"></i></h2>
+
+      <!-- Profile Settings -->
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter your username"
+      />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+      />
+
+      <!-- Account Security -->
+      <h3>Account Security</h3>
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter new password"
+      />
+
+      <label for="twoFactor">Two-Factor Authentication:</label>
+      <select id="twoFactor" name="twoFactor">
+        <option value="enabled">Enabled</option>
+        <option value="disabled">Disabled</option>
+      </select>
+
+      <!-- Notifications -->
+      <h3>Notifications</h3>
+      <label for="emailNotifications">
+        <input
+          type="checkbox"
+          id="emailNotifications"
+          name="emailNotifications"
+        />
+        Email Notifications
+      </label>
+
+      <label for="smsNotifications">
+        <input type="checkbox" id="smsNotifications" name="smsNotifications" />
+        SMS Notifications
+      </label>
+
+      <button id="btn" type="submit">Save Settings</button>
+    </div>
+
+    <script>
+      // JavaScript function to toggle the visibility of the settings section
+      function toggleSettingsSection() {
+        const settingsSection = document.getElementById("settingsSection");
+        settingsSection.style.display =
+          settingsSection.style.display === "none" ||
+          settingsSection.style.display === ""
+            ? "block"
+            : "none";
+      }
+      window.addEventListener("DOMContentLoaded", function () {
+        const btn = document
+          .querySelector("#btn")
+          .addEventListener("click", function () {
+            return alert("Saved");
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Log Out</title>
+    <style>
+        /* Button styling */
+        .logout-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #d9534f; /* Bootstrap danger color */
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .logout-button:hover {
+            background-color: #c9302c; /* Darker red on hover */
+        }
+
+        /* Log Out Section styling */
+        .logout-section {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to toggle Log Out section -->
+    <a href="javascript:void(0)" class="logout-button" onclick="toggleLogoutSection()">Log Out</a>
+
+    <!-- Log Out Section (Initially hidden) -->
+    <div id="logoutSection" class="logout-section">
+        <h2>Log Out</h2>
+        <p>Are you sure you want to log out?</p>
+        <button onclick="confirmLogout()">Yes, Log Out</button>
+        <button onclick="toggleLogoutSection()">Cancel</button>
+    </div>
+
+    <script>
+        // JavaScript function to toggle the visibility of the log out section
+        function toggleLogoutSection() {
+            const logoutSection = document.getElementById('logoutSection');
+            logoutSection.style.display = (logoutSection.style.display === 'none' || logoutSection.style.display === '') ? 'block' : 'none';
+        }
+
+        // JavaScript function to confirm logout
+        function confirmLogout() {
+            // Here you can add logic to log the user out, such as clearing session storage or redirecting
+            alert("You have been logged out.");
+            // Example: window.location.href = 'login.html'; // Redirect to login page
+        }
+    </script>
+
+</body>
+</html>

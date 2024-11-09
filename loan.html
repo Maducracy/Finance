@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Loans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"">
+    <style>
+        /* Button styling */
+        .loans-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: red; /* Bootstrap primary color */
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        body{}
+
+        .loans-button:hover {
+            background-color: red; /* Darker blue on hover */
+        }
+
+        /* Loans Section styling */
+        .loans-section {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: none; /* Initially hidden */
+        }
+
+        /* Form input styling */
+        .loans-section label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .loans-section input {
+            padding: 8px;
+            width: 100%;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: red;
+            color: white;
+        }
+
+        /* Button inside loans section */
+        .loans-section button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .loans-section button:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to toggle Loans section -->
+    <a href="javascript:void(0)" class="loans-button" onclick="toggleLoansSection()">Loans</a>
+
+    <!-- Loans Section (Initially hidden) -->
+    <div id="loansSection" class="loans-section">
+        <h2>Loans <i class="fa-solid fa-landmark"></i></h2>
+
+        <!-- Apply for a New Loan -->
+        <h3>Apply for a New Loan</h3>
+        <form id="loanForm" onsubmit="submitLoan(event)">
+            <label for="loanAmount">Loan Amount:</label>
+            <input type="number" id="loanAmount" name="loanAmount" placeholder="Enter loan amount" required>
+
+            <label for="interestRate">Interest Rate (%):</label>
+            <input type="number" id="interestRate" name="interestRate" placeholder="Enter interest rate" required>
+
+            <label for="repaymentTerm">Repayment Term (months):</label>
+            <input type="month" id="repaymentTerm" name="repaymentTerm" placeholder="Enter repayment term" required>
+
+            <button type="submit">Apply for Loan</button>
+        </form>
+
+        <!-- Existing Loans Table -->
+        <h3>Existing Loans</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Loan Amount</th>
+                    <th>Interest Rate (%)</th>
+                    <th>Repayment Term (months)</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="loanTableBody">
+                <tr>
+                    <td>$5,000</td>
+                    <td>5%</td>
+                    <td>24</td>
+                    <td>Active</td>
+                </tr>
+                <tr>
+                    <td>$10,000</td>
+                    <td>7%</td>
+                    <td>36</td>
+                    <td>Completed</td>
+                </tr>
+                <tr>
+                        <td> $20,000</td>
+                        <td> 8%</td>
+                        <td> 27</td>
+                        <td> Incomplete</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // JavaScript function to toggle the visibility of the loans section
+        function toggleLoansSection() {
+            const loansSection = document.getElementById('loansSection');
+            loansSection.style.display = (loansSection.style.display === 'none' || loansSection.style.display === '') ? 'block' : 'none';
+        }
+
+        // JavaScript function to handle loan submission
+        function submitLoan(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const loanAmount = document.getElementById('loanAmount').value;
+            const interestRate = document.getElementById('interestRate').value;
+            const repaymentTerm = document.getElementById('repaymentTerm').value;
+
+            // Create a new row in the loans table
+            const tableBody = document.getElementById('loanTableBody');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>$${loanAmount}</td>
+                <td>${interestRate}%</td>
+                <td>${repaymentTerm}</td>
+                <td>Active</td>
+            `;
+            tableBody.appendChild(newRow);
+
+            // Clear form fields
+            document.getElementById('loanForm').reset();
+        }
+    </script>
+
+</body>
+</html>
