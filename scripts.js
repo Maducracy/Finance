@@ -21,32 +21,62 @@ document.addEventListener("DOMContentLoaded", function () {
       sidebar.classList.toggle("minimized");
     });
   } else {
-    console.error("Elements not found");
+    console.log("Elements not found");
   }
+
+  // Select the canvas element
+  // // Handle Airtime Purchase
+  // document
+  //   .getElementById("airtime-form")
+  //   .addEventListener("submit", function (event) {
+  //     event.preventDefault();
+
+  //     const network = document.getElementById("airtime-network").value;
+  //     const phone = document.getElementById("airtime-phone").value;
+  //     const amount = document.getElementById("airtime-amount").value;
+
+  //     alert(
+  //       "Airtime Purchase\nNetwork: ${network}\nPhone: ${phone}\nAmount: ₦${amount}"
+  //     );
+  //   });
+
+  // Handle Data Purchase
+  const dataform = document.querySelector("#data-form").value;
+
+  dataform.addEventListener("click", function (event) {
+    e.preventdefault();
+    alert("buy today");
+  });
+
+  let selectid = document.getElementById("linkselect");
+
+  selectid.addEventListener("change", function (e) {
+    const target = event.target.value;
+    console.log("target");
+    switch (target) {
+      case "policy":
+        console.log(true);
+        window.location.replace("");
+        break;
+      case "addacount":
+        window.location.replace("addaccount");
+        break;
+      case "askquestion":
+        window.location.replace("");
+        break;
+      case "profile":
+        window.location.replace("profile.html");
+        break;
+      default:
+        return;
+    }
+  });
 
   // const inputvalue = document.querySelector(".inputvalue");
   // inputvalue.textContent = "$5,500.60";
   // const num = document.querySelector(".num");
   // num.textContent = "29,000.80";
 });
-const link = document.querySelector("link").addEventListener("click", () => {});
-
-// const circle = document.querySelector(".progress-ring__circle");
-// const radius = circle.r.baseVal.value;
-// const circumference = 2 * Math.PI * radius;
-
-// circle.style.strokeDasharray = `${circumference} ${circumference}`;
-// circle.style.strokeDashoffset = `${circumference}`;
-
-// function setProgress(percent) {
-//   const offset = circumference - (percent / 100) * circumference;
-//   circle.style.strokeDashoffset = offset;
-//   document.querySelector(".progress-label").textContent = `${percent}%`;
-// }
-
-// // Example: Set progress to 65%
-// setProgress(65);
-
 
 // document.querySelector(".myoption").addEventListener("change", function () {
 //   const myoption = this.value;
@@ -67,14 +97,11 @@ const link = document.querySelector("link").addEventListener("click", () => {});
 //       default:
 //         console.log("no valid option selected");
 //     }
-//   } 
+//   }
 // });
-function redirecttolink(){
-  const link = document.querySelector("#linkselect")
-  const url = select.value
-  if(url){
-    window.open(url, "_blank");
-    
-  }
 
-}
+setTimeout(() => {}, timeout);
+
+async (params) => {};
+
+

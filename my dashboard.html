@@ -50,7 +50,7 @@
             /* background-image: url(/Finance/img.avif);
             background-repeat: no-repeat;
             background-position: center; */
-            background-color: black;
+            background: white;
         }
 
         .atm-card {
@@ -79,7 +79,7 @@
           color: white;
         }
         .btn1:hover{
-          background-color: darkred;
+          background-color: #c47777;
           width: 200px;
           height: 30px;
           border: none;
@@ -95,7 +95,7 @@
           color: white;
         }
         .btn2:hover{
-          background-color:darkred;
+          background-color:#e98d8d;
           width: 200px;
           height: 30px;
           border: none;
@@ -106,19 +106,35 @@
           width: 120px;
         }
         h2{
-          color: white;
+          color: black;
         }
         p{
-          color: white;
+          color: black;
         }
-        input{
-          border-radius: 10px;
-        }
+    
         button{
           background-color: red;
           color: white;
           
         }
+        .email{
+          height: 29px;
+          margin-top: 10px;
+          width: 14rem;
+        }
+        #submit{
+        width: 8rem;
+        background: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }    #submit:hover{
+        width: 8rem;
+        background: darkred;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
     </style>
     <div class="dash-stn">
       <div class="container">
@@ -141,9 +157,9 @@
           </div>
           <h2>Transaction Status</h2>
           <p>Transaction ID/Email:</p>
-          <input type="email"><br><br>
-          <button>Continue</button>
-          <p>Payment </p>
+          <input class="email" type="email"><br><br>
+          <input id="submit" type="submit">
+      
         
 
 
@@ -157,4 +173,12 @@
       
     </div>
   </body>
+  <script>
+const submit = document.querySelector("#submit")
+submit.addEventListener("click", function(){
+  console.log("show somthing")
+}
+)
+
+  </script>
 </html>

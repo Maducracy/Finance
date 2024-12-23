@@ -107,7 +107,7 @@
             <label for="potAmount">Initial Amount:</label>
             <input type="number" id="potAmount" name="potAmount" placeholder="Enter initial amount" required>
 
-            <button type="submit">Create Pot</button>
+            <button id="pot" type="submit">Create Pot</button>
         </form>
 
         <!-- Existing Pots Table -->
@@ -168,6 +168,9 @@
             const row = button.parentElement.parentElement; // Get the row of the clicked button
             row.parentElement.removeChild(row); // Remove the row from the table
         }
+        const pot = document.querySelector("#pot").addEventListener("submit" , function(){
+             console.log("Pot entered sucessfully")
+        })
     </script>
 
 </body>

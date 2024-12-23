@@ -66,6 +66,7 @@
             
             <label for="recipient">Recipient:</label>
             <input type="text" id="recipient" name="recipient" placeholder="Enter recipient address">
+            <input style="background: red; color: white; border: none; width: 5rem;" type="submit">
 
             <!-- <button type="submit">Submit Transaction</button> -->
         </form>
@@ -126,6 +127,18 @@
                 historySection.style.display = 'none';
            }
         }
+        const recipient = document.querySelector("#recipient").value
+        const amount = document.querySelector("#amount").value
+        console.log("amount")
+
+      if(amount === ""){
+        console.log("plseae enter a valid value")
+      }else{
+        console.error(error)
+      }
+        
+
+
     </script>
 
 </body>

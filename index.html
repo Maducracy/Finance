@@ -8,7 +8,7 @@
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <body>
     <div class="container">
       <aside class="sidebar">
@@ -42,7 +42,7 @@
             </li>
             <li>
               <a href="recurring.html" id="link">
-                <i class="fa-solid fa-phone"></i>Recurring Bills</a
+                <i class="fa-solid fa-phone"></i>Recurring Bills    <span class="new">New</span></a
               >
             </li>
             <li>
@@ -56,10 +56,14 @@
               >
             </li>
             <li>
+              <a href="premium.html" id="link">
+                <i class="fa-regular fa-circle-check"></i>
+                Premium</a>
+            </li>
+            <li>
               <a href="settings.html" id="link"> <i class="fa-solid fa-gear"></i>Settings</a>
             </li>
-            <select id="linkselect"
-            onclick="redirecttolink()">
+            <select id="linkselect">
               <option  value="https://profile.html">My profile</option>
               <option value="addacount">Add account</option>
               <option value="askquestion">Ask a question</option>
@@ -69,11 +73,15 @@
         </nav>
         <div class="minimize-menu">Minimize Menu</div>
       </aside>
+      <div class="hamburger">
+        <span></span> 
+        <span></span> 
+        <span></span>
+    </div>
       <main class="main-content">
         <section class="overview">
-          <h2>Welcome Chidubem</h2>
-     
-          <p style="margin-bottom: 20px;" class="heading">Access and manage your account and transactions effiently</p>
+          <h2 class="name">Welcome Chidubem</h2>
+          <p  class="heading">You can buy your data and airtime at affordable price</p>
           <div class="balance-info">
             <div class="info-box-current-balance">
               <p>Current Balance</p>
@@ -133,43 +141,81 @@
               </ul>
             </div>
           </div>
-          .
-          <!-- <section class="progress-container">
-            <svg class="progress-ring" width="120" height="120">
-              <circle
-                class="progress-ring__circle"
-                stroke="blue"
-                stroke-width="4"
-                fill="transparent"
-                r="50"
-                cx="60"
-                cy="60"
-              />
-            </svg>
-            <div class="progress-label">0%</div>
-          </section> -->
-          <!-- <section class="personal-info">
-            <h1>Personal Infomation</h1>
-            <form action="">
-              <div class="field-name">
-                <div class="firstname">
-                  First Name<br />
-                  <input type="text" />
-                </div>
-                <div class="lastname">
-                  Last Name<br />
-                  <input type="text" />
-                </div>
-              </div>
-              <select class="select-ctn" name="" id="">
-                <option value=""></option>
-              </select>
-            </form> -->
           </section>
         </section>
       </main>
+     <div class="container">
+        <header id="header">
+            <h1>Airtime & Data Purchase</h1>
+        </header>
+        <main class="main-content">
+            <section class="grid">
+                Airtime Section
+                <div class="grid-item airtime">
+                    <h2>Buy Airtime</h2>
+                    <form id="airtime-form">
+                        <label for="airtime-network">Select Network:</label>
+                        <select id="airtime-network" required>
+                            <option value="mtn">MTN</option>
+                            <option value="airtel">Airtel</option>
+                            <option value="glo">Glo</option>
+                            <option value="9mobile">9Mobile</option>
+                        </select>
+                        
+                        <label for="airtime-phone">Phone Number:</label>
+                        <input type="tel" id="airtime-phone" placeholder="Enter phone number" required>
+                        
+                        <label for="airtime-amount">Amount (₦):</label>
+                        <input type="number" id="airtime-amount" placeholder="Enter amount" required>
+                        
+                        <button id="airtime" type="submit">Buy Airtime</button>
+                    </form>
+                </div>
+                
+
+                Data Section
+                <div class="grid-item data">
+                    <h2>Buy Data</h2>
+                    <form id="data-form">
+                        <label for="data-network">Select Network:</label>
+                        <select id="data-network" required>
+                            <option value="mtn">MTN</option>
+                            <option value="airtel">Airtel</option>
+                            <option value="glo">Glo</option>
+                            <option value="9mobile">9Mobile</option>
+                        </select>
+                        
+                        <label for="data-phone">Phone Number:</label>
+                        <input type="tel" id="data-phone" placeholder="Enter phone number" required>
+                        
+                        <label for="data-plan">Data Plan:</label>
+                        <select id="data-plan" required>
+                            <option value="500mb">500MB - ₦500</option>
+                            <option value="1gb">1GB - ₦1000</option>
+                            <option value="2gb">2GB - ₦2000</option>
+                            <option value="5gb">5GB - ₦5000</option>
+                        </select>
+                        
+                        <button id="buydata" type="submit">Buy Data</button>
+                    </form>
+                  
+                </div>
+                <section id="Elect-bills">
+                  <label for="Elect-bills"> AEDC plc</label>
+                  <select  id=""></select>
+
+
+                </section>
+              </section>
     </div>
-    <canvas id="complexBarChart" width="400" height="200"></canvas>
+
+
+
+</body>
+</html>
+
+ >
+    <!-- <canvas id="complexBarChart" width="400" height="200"></canvas> -->
 
 
   </body>

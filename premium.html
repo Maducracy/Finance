@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Verification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Premium Dashboard</h1>
+        </header>
+        <main class="dashboard-content">
+            <div class="user-profile">
+                <img src="IMG-20240602-WA0035.jpg" alt="User Avatar" class="user-avatar">
+                <h2>@ChidubemMaduka </h2>
+                <p id="verification-status">
+                    Status: <span class="status">Not Verified</span>
+                </p>
+            </div>
+            <div class="actions">
+                <a href="#" id="verify-premium-link" class="verify-link">Verify Premium</a>
+                <a href="#" id="pay-premium-link" class="pay-link">Pay for Premium</a>
+            </div>
+            <div id="verification-result"></div>
+        </main>
+        <footer class="dashboard-footer">
+            <p>&copy; 2024 Premium App</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    /* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f8fa;
+    color: #14171a;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Header Styling */
+.dashboard-header {
+    background-color: red;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.dashboard-header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Main Content Styling */
+.dashboard-content {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.user-profile {
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+h2 {
+    margin: 10px 0;
+    color: #1da1f2;
+    font-size: 20px;
+}
+
+#verification-status {
+    font-size: 16px;
+}
+
+.status {
+    font-weight: bold;
+    color: red;
+}
+
+.status.verified {
+    color: green;
+}
+
+.actions a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.verify-link {
+    background-color: #1da1f2;
+    color: white;
+}
+
+.verify-link:hover {
+    background-color: #0d95e8;
+}
+
+.pay-link {
+    background-color: #657786;
+    color: white;
+}
+
+.pay-link:hover {
+    background-color: #536271;
+}
+
+/* Footer Styling */
+.dashboard-footer {
+    margin-top: auto;
+    text-align: center;
+    color: #657786;
+    font-size: 14px;
+}
+</style>
+<script>
+    document.getElementById('verify-premium-link').addEventListener('click', function (event) {
+    // Prevent default link behavior
+    event.preventDefault();
+
+    const statusText = document.querySelector('.status');
+    const resultDiv = document.getElementById('verification-result');
+
+    // Simulating verification
+    statusText.textContent = 'Verifying...';
+    resultDiv.textContent = '';
+
+    setTimeout(() => {
+        const isPremium = Math.random() > 0.5; // Simulate verification
+
+        if (isPremium) {
+            statusText.textContent = 'Verified';
+            statusText.classList.add('verified');
+            resultDiv.textContent = 'Congratulations! You have been verified as a premium user.';
+        } else {
+            statusText.textContent = 'Not Verified';
+            statusText.classList.remove('verified');
+            resultDiv.textContent = 'You are not a premium user. Please pay to upgrade.';
+        }
+    }, 2000); // 2-second delay to mimic processing
+});
+
+document.getElementById('pay-premium-link').addEventListener('click', function (event) {
+    // Prevent default link behavior
+    event.preventDefault();
+
+    const resultDiv = document.getElementById('verification-result');
+
+    // Simulating payment process
+    resultDiv.textContent = 'Redirecting to payment gateway...';
+
+    setTimeout(() => {
+        // Simulating payment success
+        resultDiv.textContent = 'Payment successful! You are now a premium user.';
+        const statusText = document.querySelector('.status');
+        statusText.textContent = 'Verified';
+        statusText.classList.add('verified');
+    }, 3000); // 3-second delay to mimic payment processing
+});
+setTimeout(() =>
+{}
+)
+
+</script>
+
